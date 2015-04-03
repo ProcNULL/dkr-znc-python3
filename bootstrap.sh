@@ -14,10 +14,8 @@ apt-get install -y sudo
 # Install build dependencies.
 apt-get install -y wget build-essential libssl-dev libperl-dev pkg-config python3-dev libicu-dev
 
-
 # Prepare building
 mkdir -p /src
-
 
 # Download, compile and install ZNC.
 cd /src
