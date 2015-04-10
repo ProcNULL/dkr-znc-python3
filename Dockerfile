@@ -1,4 +1,4 @@
-FROM        ubuntu:14.04
+FROM        debian:stable
 MAINTAINER  Loetkolben "SirLoetkolben@gmail.com"
 
 # We use a bootstrap script to avoid having temporary cache files and build
