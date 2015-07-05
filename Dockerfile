@@ -4,7 +4,7 @@ MAINTAINER  Loetkolben "SirLoetkolben@gmail.com"
 ADD         bootstrap.sh /tmp/
 RUN         chmod +x /tmp/bootstrap.sh && /tmp/bootstrap.sh
 
-# uid ZNC will be run as. Defaults to 65534 (nobody on debian!).
+# UID ZNC will run as; defaults to 65534 (nobody)
 # Override at container creation time with "docker run --env UID_ZNC=<NEW_UID>"
 ENV         UID_ZNC=65534
 
