@@ -1,13 +1,13 @@
 FROM        debian:stable
 MAINTAINER  Loetkolben "SirLoetkolben@gmail.com"
 
-# We use a bootstrap script to avoid having temporary cache files and build
-# dependencies being committed and included into the docker image.
 ADD         bootstrap.sh /tmp/
 RUN         chmod +x /tmp/bootstrap.sh && /tmp/bootstrap.sh
 
-# UID 9001 because of reasons
-RUN         useradd -u 9001 znc
+# uid ZNC will be run as. Defaults to 65534 (nobody on debian!).
+# Override at container creation time with "docker run --env UID_ZNC=<NEW_UID>"
+ENV         UID_ZNC=65534
+
 ADD         start-znc /usr/local/bin/
 ADD         znc.conf.default /src/
 RUN         chmod 644 /src/znc.conf.default
